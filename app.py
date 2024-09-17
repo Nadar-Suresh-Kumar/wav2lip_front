@@ -17,7 +17,7 @@ if st.button("Submit"):
         if re.match(email_regex, email):
             # Sending data to Flask backend
             data = {'username': username, 'phone_number': email}
-            response = requests.post("http://localhost:5000/submit", json=data)
+            response = requests.post("https://wav2lip-back.onrender.com/submit", json=data)
 
             if response.status_code == 200:
                 st.success("Data submitted successfully!")
